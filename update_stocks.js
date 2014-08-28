@@ -3,7 +3,7 @@
          "AAPL":[101.35, "+1.5%", "success"],
          "CSCO":[23.7, "-8.70%", "danger"],
          "PANW":[82.35, "-0.05%", "primary"],
-         "GPRO":[47.10, "+10.55%", "sucess"],
+         "GPRO":[47.10, "+10.55%", "success"],
         };
       for(var ii in slist) {
         if(slist.hasOwnProperty(ii)){
