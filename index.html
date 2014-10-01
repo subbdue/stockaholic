@@ -13,9 +13,10 @@
     <!-- Bootstrap core CSS -->
     <!--<link href="../../dist/css/bootstrap.css" rel="stylesheet">-->
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.2.0/slate/bootstrap.min.css" rel="stylesheet">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100,400,700,300" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!--<link href="starter-template.css" rel="stylesheet">-->
@@ -71,11 +72,27 @@
     <style>
       body {
         font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
         padding-top: 50px;
+        /*font-family: "Roboto", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;*/
+      }
+      #footer {
+        background-color:#34495e;
+        margin-bottom: 50px;
+        padding:10px;
+      }
+      .inner-footer {
+        width:1100px;
+        margin:0 auto;
       }
       .row-res {
         float:left;
         word-wrap:break-word;
+      }
+      .row-res .btn {
+        width:60px;
+        height:65px;
       }
       /*.result {
         margin-left: 60px;
@@ -94,48 +111,48 @@
         top: 50px;
         width:100%;
       }
-      .btn-mild-success {
+      .btn-msuccess {
         color: #ffffff;
         background-color: #316231;
         border-color: #316231;
       }
-      .btn-mild-success:hover,
-      .btn-mild-success:focus,
-      .btn-mild-success:active,
-      .btn-mild-success.active,
-      .open > .dropdown-toggle.btn-mild-success {
+      .btn-msuccess:hover,
+      .btn-msuccess:focus,
+      .btn-msuccess:active,
+      .btn-msuccess.active,
+      .open > .dropdown-toggle.btn-msuccess {
         color: #ffffff;
         background-color: #42b142;
         border-color: #40a940;
       }
-      .btn-mild-success:active,
-      .btn-mild-success.active,
-      .open > .dropdown-toggle.btn-mild-success {
+      .btn-msuccess:active,
+      .btn-msuccess.active,
+      .open > .dropdown-toggle.btn-msuccess {
         background-image: none;
       }
-      .btn-mild-success.disabled,
-      .btn-mild-success[disabled],
-      fieldset[disabled] .btn-mild-success,
-      .btn-mild-success.disabled:hover,
-      .btn-mild-success[disabled]:hover,
-      fieldset[disabled] .btn-mild-success:hover,
-      .btn-mild-success.disabled:focus,
-      .btn-mild-success[disabled]:focus,
-      fieldset[disabled] .btn-mild-success:focus,
-      .btn-mild-success.disabled:active,
-      .btn-mild-success[disabled]:active,
-      fieldset[disabled] .btn-mild-success:active,
-      .btn-mild-success.disabled.active,
-      .btn-mild-success[disabled].active,
-      fieldset[disabled] .btn-mild-success.active {
+      .btn-msuccess.disabled,
+      .btn-msuccess[disabled],
+      fieldset[disabled] .btn-msuccess,
+      .btn-msuccess.disabled:hover,
+      .btn-msuccess[disabled]:hover,
+      fieldset[disabled] .btn-msuccess:hover,
+      .btn-msuccess.disabled:focus,
+      .btn-msuccess[disabled]:focus,
+      fieldset[disabled] .btn-msuccess:focus,
+      .btn-msuccess.disabled:active,
+      .btn-msuccess[disabled]:active,
+      fieldset[disabled] .btn-msuccess:active,
+      .btn-msuccess.disabled.active,
+      .btn-msuccess[disabled].active,
+      fieldset[disabled] .btn-msuccess.active {
         background-color: #62c462;
         border-color: #62c462;
       }
-      .btn-mild-success .badge {
+      .btn-msuccess .badge {
         color: #316231;
         background-color: #ffffff;
       }
-      .btn-mild-success {
+      .btn-msuccess {
         background-image: -webkit-linear-gradient(#58b058, #4e9d4e 60%, #458945);
         background-image: -o-linear-gradient(#58b058, #4e9d4e 60%, #458945);
         background-image: linear-gradient(#58b058, #4e9d4e 60%, #458945);
@@ -143,7 +160,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff78cc78', endColorstr='#ff53be53', GradientType=0);
         filter: none;
       }
-      .btn-mild-success:hover {
+      .btn-msuccess:hover {
         background-image: -webkit-linear-gradient(#215821, #266726 40%, #2C762C));
         background-image: -o-linear-gradient(#215821, #266726 40%, #2C762C));
         background-image: linear-gradient(#215821, #266726 40%, #2C762C);
@@ -151,6 +168,49 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2f7d2f', endColorstr='#ff3da23d', GradientType=0);
         filter: none;
       }
+      /* QueryLoader plugin */
+      .QOverlay {
+          background-color: #000000;
+          z-index: 9999;
+      }
+
+      .QLoader {
+          background-color: #CCCCCC;
+          height: 1px;
+      }
+      /* http://css-tricks.com/hash-tag-links-padding/ */
+      section:before { 
+          display: block; 
+          content: " "; 
+          margin-top: -50px; 
+          height: 50px; 
+          visibility: hidden; 
+      }
+
+.navbar-xs .navbar { min-height:28px; height: 28px; }
+.navbar-xs .navbar .navbar-brand{ padding: 0px 12px;font-size: 16px;line-height: 28px; }
+.navbar-xs .navbar .navbar-nav > li > a {  padding-top: 0px; padding-bottom: 0px; line-height: 28px; }
+.navbar-sm { min-height:40px; height: 40px; }
+.navbar-sm .navbar-brand{ padding: 0px 12px;font-size: 16px;line-height: 40px; }
+.navbar-sm .navbar-nav > li > a {  padding-top: 0px; padding-bottom: 0px; line-height: 40px; }
+/*@media(min-width:768px) {
+  .navbar { min-height:40px; height: 40px; }
+  .navbar .navbar-brand{ padding: 0px 12px;font-size: 16px;line-height: 40px; }
+  .navbar .navbar-nav > li > a {  padding-top: 0px; padding-bottom: 0px; line-height: 40px; }
+}*/
+.navbar-btn-2 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.navbar-btn-2.btn-sm {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.navbar-btn-2.btn-xs {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
     </style>
     <!-- floating menu -->
     <!-- http://www.quackit.com/css/codes/css_floating_menu.cfm
@@ -173,6 +233,7 @@
     <![endif]-->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://raw.githubusercontent.com/subbdue/stockaholic/master/js/queryLoader.js"></script>
 	<script>
 	function startTime() {
 	    var today=new Date();
@@ -188,22 +249,23 @@
 	    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
 	    return i;
 	}
-  function updateStockPrices() {
-      var slist = {"AAPL":[101.35, "+1.5%", "success"], "CSCO":[23.7, "-0.75%", "primary"], "PANW":[84.35, "+0.75", "mild-success"]};
-      for(var ii in slist) {
-        if(slist.hasOwnProperty(ii)){
-            var symbl = '#'+ii;
-            var newPrice = slist[ii][0]+"<br>"+slist[ii][1];
-            var newClass = "btn btn-"+slist[ii][2];
-            $(symbl).children("a").children("p.price").html(newPrice);
-            /* Change Class http://stackoverflow.com/questions/3452778/jquery-change-class-name */
-            $(symbl).children("a").attr("class", newClass);
-        }
-      }
-      /*var t = setTimeout(function(){updateStockPrices()},5000);*/
+  /* http://www.tutorialspoint.com/jquery/ajax-jquery-getscript.htm */
+  function fetchStockPrices() {
+    $.getScript('https://raw.githubusercontent.com/subbdue/stockaholic/master/update_stocks.js', function(jd) {
+              // Call custom function defined in script
+              updateStockPrices();
+    });
+    var t = setTimeout(function(){fetchStockPrices()},10000);
+  }
+  function drawStockCharts() {
+    $.getScript('https://raw.githubusercontent.com/subbdue/stockaholic/master/stock_chart.js', function(jd) {
+              // Call custom function defined in script
+              drawStockTable();
+    });
   }
   $(document).ready(function() {
-    updateStockPrices();
+    drawStockCharts();
+    fetchStockPrices();       
   });
   $('.navbar-lower').affix({
     offset: {top: 50}
@@ -216,7 +278,7 @@
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle hidden-phone" data-toggle="collapse" data-target=".navbar-collapse">
+          <button type="button" class="navbar-toggle hidden-phone" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -225,7 +287,7 @@
           <a class="navbar-brand" href="./index.html" style="font-family:'Shadows Into Light',cursive;font-size:30px">Stock `A Holic</a>
         </div>
 
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active"><a href="./index.html">Stocks</a></li>
             <li><a href="./etfs.html">ETFs</a></li>
@@ -233,7 +295,8 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a id="insert-date"></a></li>
             <li><a id="insert-time"></a></li>
-            <li><a href="./about.html" target="_blank">About</a></li>
+            <!--<li><a href="./about.html" target="_blank">About</a></li>-->
+            <li><a data-toggle="modal" data-target="#myAboutModal">About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -241,7 +304,9 @@
 
     <!-- 2nd NavBar -->
     <!-- http://stackoverflow.com/questions/20699940/bootstrap-two-navbars-collapsing -->
-    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    <!-- http://stackoverflow.com/questions/20168589/changing-navbar-height-breaks-responsive-collapse -->
+    <!-- http://stackoverflow.com/questions/18192082/bootstrap-3-navbar-collapse/18944192#18944192 -->
+    <div class="navbar navbar-default navbar-fixed-bottom navbar-sm hidden-xs hidden-sm" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -250,26 +315,103 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" style="font-family:'Shadows Into Light',cursive;font-size:25px">Sectors</a>
+        <a class="navbar-brand" style="font-family:'Shadows Into Light',cursive;font-size:21px">Sectors</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+       <!--
         <ul class="nav navbar-nav">
-          <li><a href="#/Basic-Industries">Basic-Industries</a></li>
-          <li><a href="#/Capital-Goods">Capital-Goods</a></li>
-          <li><a href="#">Non-Durables</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Energy</a></li>
-          <li><a href="#">Finance</a></li>
-          <li><a href="#">Health</a></li>
-          <li><a href="#">Misc</a></li>
-          <li><a href="#">Utilities</a></li>
-          <li class="active"><a href="#">Technology</a></li>
-          <li><a href="#">Transportation</a></li>
+          <li><a data-nav="scroll" href="#Basic-Industries">Basic-Industries</a></li>
+          <li><a data-nav="scroll" href="#Capital-Goods">Capital-Goods</a></li>
+          <li><a data-nav="scroll" href="#Non-Durables">Non-Durables</a></li>
+          <li><a data-nav="scroll" href="#Services">Services</a></li>
+          <li><a data-nav="scroll" href="#Energy">Energy</a></li>
+          <li><a data-nav="scroll" href="#Finance">Finance</a></li>
+          <li><a data-nav="scroll" href="#Health">Health</a></li>
+          <li><a data-nav="scroll" href="#Misc">Misc</a></li>
+          <li><a data-nav="scroll" href="#Utilities">Utilities</a></li>
+          <li class="active"><a data-nav="scroll" href="#Technology">Technology</a></li>
+          <li><a data-nav="scroll" href="#Transportation">Transportation</a></li>
         </ul>
+      -->
+
+        <!-- http://css-tricks.com/hash-tag-links-padding/ -->
+        <div class="hidden-md">
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Basic-Industries" ><i class="fa fa-gears fa-fw"></i> Basic Industries</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Capital-Goods"><i class="fa fa-anchor fa-fw"></i> Capital Goods</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Non-Durables"><i class="fa fa-lemon-o fa-fw"></i> Non Durables</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Services"><i class="fa fa-users fa-fw"></i> Services</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Energy"><i class="fa fa-bolt fa-fw"></i> Energy</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Finance"><i class="fa fa-usd fa-fw"></i> Finance</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Health"><i class="fa fa-medkit fa-fw"></i> Health</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Misc"><i class="fa fa-sort-alpha-asc fa-fw"></i> Misc</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Utilities"><i class="fa fa-recycle fa-fw"></i> Utilities</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Technology"><i class="fa fa-desktop fa-lg fa-fw"></i> Technology</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Transportation"><i class="fa fa-truck fa-fw"></i> Transportation</a>
+        </div>
+        <div class="hidden-lg">
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Basic-Industries" ><i class="fa fa-gears fa-fw"></i> Industries</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Capital-Goods"><i class="fa fa-anchor fa-fw"></i> Goods</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Non-Durables"><i class="fa fa-birthday-cake fa-fw"></i> Non-Durables</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Services"><i class="fa fa-users fa-fw"></i> Services</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Energy"><i class="fa fa-bolt fa-fw"></i> Energy</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Finance"><i class="fa fa-usd fa-fw"></i> Fin</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Health"><i class="fa fa-medkit fa-fw"></i> Health</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Misc"><i class="fa fa-sort-alpha-asc fa-fw"></i> Misc</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Utilities"><i class="fa fa-recycle fa-fw"></i> Utils</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Technology"><i class="fa fa-desktop fa-lg fa-fw"></i> Tech</a>
+        <a type="button" class="btn btn-default btn-sm navbar-btn-2" href="#Transportation"><i class="fa fa-truck fa-fw"></i> Transport</a>
+        </div>
       </div><!-- /.navbar-collapse -->
-    </nav>
+    </div><!-- /.navbar -->
+
+    <div class="navbar navbar-default navbar-fixed-bottom hidden-md hidden-lg" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" style="font-family:'Shadows Into Light',cursive;font-size:18px">Sectors</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+        <!-- http://stackoverflow.com/questions/20012665/disable-bootstrap-3-navbar-going-2-rows-in-medium-viewport-size -->
+        <ul class="nav navbar-nav hidden-xs">
+          <li><a data-nav="scroll" href="#Basic-Industries"><i class="fa fa-gears fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Capital-Goods"><i class="fa fa-anchor fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Non-Durables"><i class="fa fa-birthday-cake fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Services"><i class="fa fa-users fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Energy"><i class="fa fa-bolt fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Finance"><i class="fa fa-usd fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Health"><i class="fa fa-medkit fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Misc"><i class="fa fa-sort-alpha-asc fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Utilities"><i class="fa fa-recycle fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Technology"><i class="fa fa-desktop fa-lg fa-fw"></i></a></li>
+          <li><a data-nav="scroll" href="#Transportation"><i class="fa fa-truck fa-lg fa-fw"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav hidden-sm">
+          <li><a data-nav="scroll" href="#Basic-Industries">Basic-Industries</a></li>
+          <li><a data-nav="scroll" href="#Capital-Goods">Capital-Goods</a></li>
+          <li><a data-nav="scroll" href="#Non-Durables">Non-Durables</a></li>
+          <li><a data-nav="scroll" href="#Services">Services</a></li>
+          <li><a data-nav="scroll" href="#Energy">Energy</a></li>
+          <li><a data-nav="scroll" href="#Finance">Finance</a></li>
+          <li><a data-nav="scroll" href="#Health">Health</a></li>
+          <li><a data-nav="scroll" href="#Misc">Misc</a></li>
+          <li><a data-nav="scroll" href="#Utilities">Utilities</a></li>
+          <li><a data-nav="scroll" href="#Technology">Technology</a></li>
+          <li><a data-nav="scroll" href="#Transportation">Transportation</a></li>
+        </ul>
+   
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.navbar -->
+
+
 
     <div class="container">
         <div class="page-header" id="banner">
@@ -298,41 +440,129 @@
         -->
 
         
-        <section id="Finance">
-        <p class="lead" align="center">Finance</p>
-        <div class="row">
-        <div class="result" id="result-container">
-        <div class="btn-group btn-group-justified" id="sector-fin"></div>
-        </div>
-        </div>
+        <section id="Basic-Industries">
+          <div class="well">
+            <p class="lead" align="center">Basic Industries</p>
+            <div class="row">
+              <div class="btn-group btn-group-justified" id="sector-bi"></div>
+            </div>
+          </div>
         </section>
 
-        <hr>
+        <section id="Capital-Goods">
+          <div class="well">
+          <p class="lead" align="center">Capital Goods</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-cg"></div>
+          </div>
+          </div>
+        </section>
+
+        <section id="Non-Durables">
+          <div class="well">
+          <p class="lead" align="center">Non Durables</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-nd"></div>
+          </div>
+          </div>
+        </section>
+
+        <section id="Services">
+          <div class="well">
+          <p class="lead" align="center">Services</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-services"></div>
+          </div>
+          </div>
+        </section>
+
+        <section id="Energy">
+          <div class="well">
+          <p class="lead" align="center">Energy</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-energy"></div>
+          </div>
+          </div>
+        </section>
+
+        <section id="Finance">
+          <div class="well">
+          <p class="lead" align="center">Finance</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-fin"></div>
+          </div>
+          </div>
+        </section>
+
+        <section id="Health">
+          <div class="well">
+          <p class="lead" align="center">Health</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-health"></div>
+          </div>
+          </div>
+        </section>
+
+        <section id="Misc">
+          <div class="well">
+          <p class="lead" align="center">Miscellaneous</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-misc"></div>
+          </div>
+          </div>
+        </section>
+
+        <section id="Utilities">
+          <div class="well">
+          <p class="lead" align="center">Utilities</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-utils"></div>
+          </div>
+          </div>
+        </section>
+
         <section id="Technology">
-        <p class="lead" align="center">Technology</p>
-        <div class="result" id="result-container">
-        <div class="btn-group" id="sector-tech">
-            <div class="row-res" id="PANW"><a class="btn btn-warning" href="http://www.wordwebonline.com/search.pl?w=sample" target="_blank"><p class="sybl">PANW</p><p class="price">84.11<br>+.05%</p></a></div>
-            <div class="row-res" id="CSCO"><a class="btn btn-success" href="http://www.wordwebonline.com/search.pl?w=sample" target="_blank"><p class="sybl">CSCO</p><p class="price">84.11<br>+.05%</p></a></div>
-            <div class="row-res" id="AAPL"><a class="btn btn-mild-success" href="http://www.wordwebonline.com/search.pl?w=sample" target="_blank"><p class="sybl">AAPL</p><p class="price">84.11<br>+.05%</p></a></div>
-            <div class="row-res" id="SYF"><a class="btn btn-primary" href="http://www.wordwebonline.com/search.pl?w=sample" target="_blank"><p class="sybl">SYF</p><p class="price">84.11<br>+.05%</p></a></div>
-            <div class="row-res" id="GPRO"><a class="btn btn-danger" href="http://www.wordwebonline.com/search.pl?w=sample" target="_blank"><p class="sybl">GPRO</p><p class="price">84.11<br>+.05%</p></a></div>
-        </div>
-        </div>
+          <div class="well">
+          <p class="lead" align="center">Technology</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-tech"></div>
+          </div>
+          </div>
         </section>
 
-        <hr>
-        <section id="Finance">
-        <p class="lead" align="center">Finance</p>
-        <div class="row">
-        <div class="result" id="result-container">
-        <div class="btn-group btn-group-justified" id="sector-fin"></div>
-        </div>
-        </div>
+        <section id="Transportation">
+          <div class="well">
+          <p class="lead" align="center">Transportation</p>
+          <div class="row">
+            <div class="btn-group btn-group-justified" id="sector-transport"></div>
+          </div>
+          </div>
         </section>
 
     </div><!-- /.container -->
 
+    <div class="modal fade" id="myAboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">x</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">About</h4>
+          </div>
+          <div class="modal-body">
+            <p>Sample Text</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="inner-footer">
+        <p>A Subbdued Creation</p>
+      </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -342,8 +572,7 @@
         document.getElementById("insert-date").innerHTML = d.toDateString();
     </script>
     <script src="http://jquery-csv.googlecode.com/git/src/jquery.csv.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-	<script src="dict.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
 
